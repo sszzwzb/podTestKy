@@ -1,16 +1,26 @@
 PODS:
+  - MBProgressHUD (1.0.0)
   - SDAutoLayout (2.1.9)
+  - SDWebImage (4.4.8):
+    - SDWebImage/Core (= 4.4.8)
+  - SDWebImage/Core (4.4.8)
 
 DEPENDENCIES:
+  - MBProgressHUD (~> 1.0.0)
   - SDAutoLayout (~> 2.1.3)
+  - SDWebImage (~> 4.0)
 
 SPEC REPOS:
   trunk:
+    - MBProgressHUD
     - SDAutoLayout
+    - SDWebImage
 
 SPEC CHECKSUMS:
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   SDAutoLayout: 6b6f4db0d009dfc46cef14ef710dbb164e86616c
+  SDWebImage: 783af2c3fa36291a250030c4752ee370a9a51d13
 
-PODFILE CHECKSUM: 5dea008c1ae51db1a8c49680d04dbc252bf5f0d6
+PODFILE CHECKSUM: a26978cacf817b41cfe7107442b4538f8483ddea
 
 COCOAPODS: 1.9.3

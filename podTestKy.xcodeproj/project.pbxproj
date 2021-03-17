@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,7 @@
 		A642BBD826005B2700915A31 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A642BBD726005B2700915A31 /* main.m */; };
 		A642BBE226005B2800915A31 /* podTestKyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A642BBE126005B2800915A31 /* podTestKyTests.m */; };
 		A642BBED26005B2800915A31 /* podTestKyUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A642BBEC26005B2800915A31 /* podTestKyUITests.m */; };
+		A642BC1C26007BEA00915A31 /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = A642BC1A26007BEA00915A31 /* Utilities.m */; };
 		BD60F553EC75BA378B765C4D /* Pods_podTestKy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCC70DAAE60BD89FCD687974 /* Pods_podTestKy.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,8 @@
 		A642BBE826005B2800915A31 /* podTestKyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = podTestKyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A642BBEC26005B2800915A31 /* podTestKyUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = podTestKyUITests.m; sourceTree = "<group>"; };
 		A642BBEE26005B2800915A31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A642BC1A26007BEA00915A31 /* Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utilities.m; sourceTree = "<group>"; };
+		A642BC1B26007BEA00915A31 /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
 		CCC70DAAE60BD89FCD687974 /* Pods_podTestKy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_podTestKy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D27C24E6777970BD7F251C3E /* Pods-podTestKy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-podTestKy.debug.xcconfig"; path = "Target Support Files/Pods-podTestKy/Pods-podTestKy.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,7 +100,6 @@
 				D27C24E6777970BD7F251C3E /* Pods-podTestKy.debug.xcconfig */,
 				8D13FD6B89C8E0DAE6F06290 /* Pods-podTestKy.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -126,6 +128,7 @@
 		A642BBC426005B2200915A31 /* podTestKy */ = {
 			isa = PBXGroup;
 			children = (
+				A642BC1926007BC900915A31 /* Classes */,
 				A642BBC526005B2200915A31 /* AppDelegate.h */,
 				A642BBC626005B2200915A31 /* AppDelegate.m */,
 				A642BBCB26005B2200915A31 /* ViewController.h */,
@@ -155,6 +158,15 @@
 				A642BBEE26005B2800915A31 /* Info.plist */,
 			);
 			path = podTestKyUITests;
+			sourceTree = "<group>";
+		};
+		A642BC1926007BC900915A31 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A642BC1B26007BEA00915A31 /* Utilities.h */,
+				A642BC1A26007BEA00915A31 /* Utilities.m */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,6 +344,7 @@
 			files = (
 				A642BBCD26005B2200915A31 /* ViewController.m in Sources */,
 				A642BBC726005B2200915A31 /* AppDelegate.m in Sources */,
+				A642BC1C26007BEA00915A31 /* Utilities.m in Sources */,
 				A642BBD826005B2700915A31 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,6 +520,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = podTestKy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -525,6 +539,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = podTestKy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
