@@ -77,13 +77,10 @@ typedef NS_ENUM(NSInteger, timeWithTimeIntervalStringENUM) {
 + (NSString *)timeWithTimeIntervalString:(NSString *)timeString state:(timeWithTimeIntervalStringENUM)state;
 
 
-//   需要打开WiFi相关信息（Access WiFi Information），还要在申请证书的时候，获取WiFi名称   iOS 13需要打开地理位置才能获取到WIFi信息
-+ (NSString *)wifiName;
-//   需要添加WiFi相关信息，获取WiFi MAC 地址
-+ (NSString *)wifiMac;
-
-//   zhongYingIM://%7B%22share%22:%22zhangkaiyi%22%7D  解码  zhongYingIM://{"share":"zhangkaiyi"}
-+ (NSString *)urlDecodeStringWithStr:(NSString *)str;
+////   需要打开WiFi相关信息（Access WiFi Information），还要在申请证书的时候，获取WiFi名称   iOS 13需要打开地理位置才能获取到WIFi信息
+//+ (NSString *)wifiName;
+////   需要添加WiFi相关信息，获取WiFi MAC 地址
+//+ (NSString *)wifiMac;
 
 
 /**

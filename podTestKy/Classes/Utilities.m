@@ -16,13 +16,13 @@
 #import <sys/utsname.h>
 
 
-
-//  获取 WiFi MAC 地址
-#import <SystemConfiguration/CaptiveNetwork.h>
-#import <NetworkExtension/NetworkExtension.h>
-
-//   位置权限
-#import <CoreLocation/CoreLocation.h>
+//
+////  获取 WiFi MAC 地址
+//#import <SystemConfiguration/CaptiveNetwork.h>
+//#import <NetworkExtension/NetworkExtension.h>
+//
+////   位置权限
+//#import <CoreLocation/CoreLocation.h>
 
 
 #define iPhone6p ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2208), [[UIScreen mainScreen] currentMode].size) : NO)
@@ -349,54 +349,54 @@
 
 
 
-//   需要打开WiFi相关信息（Access WiFi Information），还要在申请证书的时候，获取WiFi名称  iOS 13需要打开地理位置才能获取到WIFi信息
-+ (NSString *)wifiName
-{
-    NSArray *ifs = CFBridgingRelease(CNCopySupportedInterfaces());
-    id info = nil;
-    for (NSString *ifname in ifs) {
-        info = (__bridge_transfer id)CNCopyCurrentNetworkInfo((CFStringRef) ifname);
-        if (info && [info count]) {
-            break;
-        }
-    }
-    NSDictionary *dic = (NSDictionary *)info;
-    NSString *ssid = [[dic objectForKey:@"SSID"] lowercaseString];
-    
-    return ssid;
-}
-
-//   需要添加WiFi相关信息，获取WiFi MAC 地址
-+ (NSString *)wifiMac
-{
-    NSArray *ifs = CFBridgingRelease(CNCopySupportedInterfaces());
-    id info = nil;
-    for (NSString *ifname in ifs) {
-        info = (__bridge_transfer id)CNCopyCurrentNetworkInfo((CFStringRef) ifname);
-        if (info && [info count]) {
-            break;
-        }
-    }
-    NSDictionary *dic = (NSDictionary *)info;
-    NSString *bssid = [dic objectForKey:@"BSSID"];
-    
-    
-    //  整理格式，"7c:a1:77:9e:6:60  整理成 "7c:a1:77:9e:06:60
-    NSMutableArray *bssidArr = [NSMutableArray array];
-    for (NSString *perStr in [bssid componentsSeparatedByString:@":"]) {
-        NSString *test = perStr;
-        if ([test length] == 1) {
-            test = [@"0" stringByAppendingString:perStr];
-        }
-        if ([test length] == 0) {
-            test = @"00";
-        }
-        [bssidArr addObject:test];
-    }
-    
-    
-    return [bssidArr count] > 0 ? [bssidArr componentsJoinedByString:@":"] : @"";
-}
+////   需要打开WiFi相关信息（Access WiFi Information），还要在申请证书的时候，获取WiFi名称  iOS 13需要打开地理位置才能获取到WIFi信息
+//+ (NSString *)wifiName
+//{
+//    NSArray *ifs = CFBridgingRelease(CNCopySupportedInterfaces());
+//    id info = nil;
+//    for (NSString *ifname in ifs) {
+//        info = (__bridge_transfer id)CNCopyCurrentNetworkInfo((CFStringRef) ifname);
+//        if (info && [info count]) {
+//            break;
+//        }
+//    }
+//    NSDictionary *dic = (NSDictionary *)info;
+//    NSString *ssid = [[dic objectForKey:@"SSID"] lowercaseString];
+//
+//    return ssid;
+//}
+//
+////   需要添加WiFi相关信息，获取WiFi MAC 地址
+//+ (NSString *)wifiMac
+//{
+//    NSArray *ifs = CFBridgingRelease(CNCopySupportedInterfaces());
+//    id info = nil;
+//    for (NSString *ifname in ifs) {
+//        info = (__bridge_transfer id)CNCopyCurrentNetworkInfo((CFStringRef) ifname);
+//        if (info && [info count]) {
+//            break;
+//        }
+//    }
+//    NSDictionary *dic = (NSDictionary *)info;
+//    NSString *bssid = [dic objectForKey:@"BSSID"];
+//
+//
+//    //  整理格式，"7c:a1:77:9e:6:60  整理成 "7c:a1:77:9e:06:60
+//    NSMutableArray *bssidArr = [NSMutableArray array];
+//    for (NSString *perStr in [bssid componentsSeparatedByString:@":"]) {
+//        NSString *test = perStr;
+//        if ([test length] == 1) {
+//            test = [@"0" stringByAppendingString:perStr];
+//        }
+//        if ([test length] == 0) {
+//            test = @"00";
+//        }
+//        [bssidArr addObject:test];
+//    }
+//
+//
+//    return [bssidArr count] > 0 ? [bssidArr componentsJoinedByString:@":"] : @"";
+//}
 
 
 
